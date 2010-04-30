@@ -1,0 +1,21 @@
+#search__jump {
+    border: 1px solid __border__;
+    background-color: __highlight__;
+    opacity: 0.1;
+    width: 20px;
+    height: 42px;
+    position: absolute;
+    left: 0;
+    text-align: center;
+}
+
+#search__jump:hover {
+    opacity: 0.9;
+}
+
+#search__jump img {
+    width: 14px;
+    height: 10px;
+    cursor: pointer;
+    margin: 2px 0px;
+}
