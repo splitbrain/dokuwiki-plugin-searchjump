@@ -20,7 +20,7 @@ var sjump = {
         prev.onclick = function(){ sjump.jump_by(-1); };
 
         var close = document.createElement('img');
-        close.src = DOKU_BASE+'lib/plugins/searchjump/pix/prev.gif';
+        close.src = DOKU_BASE+'lib/plugins/searchjump/pix/close.gif';
         close.title = LANG.plugins.searchjump['close'];
         close.onclick = sjump.close;
 
