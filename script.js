@@ -69,6 +69,6 @@ var sjump = {
         // close dialog
         document.body.removeChild(sjump.dialog);
     }
-}
+};
 
 addInitEvent(sjump.init);
