@@ -7,46 +7,48 @@ var sjump = {
      * create and display search jump dialog
      */
     init: function () {
-        sjump.$found = jQuery('span.search_hit');
-        if (!sjump.$found.length) return;
+        jQuery( document ).ready(function() {
+            sjump.$found = jQuery('span.search_hit');
+            if (!sjump.$found.length) return;
 
 
-        sjump.dialog = document.createElement('div');
-        sjump.dialog.id = 'search__jump';
+            sjump.dialog = document.createElement('div');
+            sjump.dialog.id = 'search__jump';
 
-        var prev = document.createElement('img');
-        prev.src = DOKU_BASE + 'lib/plugins/searchjump/pix/up.gif';
-        prev.title = LANG.plugins.searchjump['up']+' [k]';
-        prev.onclick = function () {
-            sjump.jump_by(-1);
-        };
+            var prev = document.createElement('img');
+            prev.src = DOKU_BASE + 'lib/plugins/searchjump/pix/up.gif';
+            prev.title = LANG.plugins.searchjump['up']+' [k]';
+            prev.onclick = function () {
+                sjump.jump_by(-1);
+            };
 
-        var close = document.createElement('img');
-        close.src = DOKU_BASE + 'lib/plugins/searchjump/pix/close.gif';
-        close.title = LANG.plugins.searchjump['close']+' [x]';
-        close.onclick = sjump.close;
+            var close = document.createElement('img');
+            close.src = DOKU_BASE + 'lib/plugins/searchjump/pix/close.gif';
+            close.title = LANG.plugins.searchjump['close']+' [x]';
+            close.onclick = sjump.close;
 
-        var next = document.createElement('img');
-        next.src = DOKU_BASE + 'lib/plugins/searchjump/pix/down.gif';
-        next.title = LANG.plugins.searchjump['down']+' [j]';
-        next.onclick = function () {
-            sjump.jump_by(1);
-        };
+            var next = document.createElement('img');
+            next.src = DOKU_BASE + 'lib/plugins/searchjump/pix/down.gif';
+            next.title = LANG.plugins.searchjump['down']+' [j]';
+            next.onclick = function () {
+                sjump.jump_by(1);
+            };
 
-        sjump.dialog.appendChild(prev);
-        sjump.dialog.appendChild(close);
-        sjump.dialog.appendChild(next);
+            sjump.dialog.appendChild(prev);
+            sjump.dialog.appendChild(close);
+            sjump.dialog.appendChild(next);
 
-        jQuery(document).bind('keypress', sjump.keyhandle);
+            jQuery(document).bind('keypress', sjump.keyhandle);
 
-        // for the dokuwiki template:
-        var $page = jQuery('#dokuwiki__content').find('div.page');
-        if($page.length) {
-            jQuery(sjump.dialog).css('left', $page.offset().left + 'px');
-        }
+            // for the dokuwiki template:
+            var $page = jQuery('#dokuwiki__content').find('div.page');
+            if($page.length) {
+                jQuery(sjump.dialog).css('left', $page.offset().left + 'px');
+            }
 
-        document.body.appendChild(sjump.dialog);
-        sjump.jump_by(0);
+            document.body.appendChild(sjump.dialog);
+            sjump.jump_by(0);
+        });
     },
 
     /**
