@@ -7,7 +7,7 @@ var sjump = {
      * create and display search jump dialog
      */
     init: function () {
-        sjump.$found = jQuery('span.search_hit');
+        sjump.$found = jQuery('span.mark');
         if (!sjump.$found.length) return;
 
 
